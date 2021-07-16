@@ -20,12 +20,16 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest",
-      "eslint-config-airbnb"
+      "react-app/jest"
     ],
     "rules": {
       "react/react-in-jsx-scope": "off",
-      "react/prop-types": "off"
+      "react/prop-types": "off",
+      "react/prefer-stateless-function": "off",
+      "react/jsx-one-expression-per-line": "off",
+      "react/destructuring-assignment": "off",
+      "react/no-access-state-in-setstate": "off",
+      "react/object-curly-newline": "off"
     },
     "ignorePatterns": [
       "src/reportWebVitals.js",
@@ -43,8 +47,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "eslint-config-airbnb": "^18.2.1"
   }
 }
