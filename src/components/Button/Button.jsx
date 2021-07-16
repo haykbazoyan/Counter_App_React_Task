@@ -1,4 +1,4 @@
-import styles from './button.css';
+import styles from './Button.module.css';
 
 export default function Button({ onClickFn, isDisable, btnName }) {
   return (

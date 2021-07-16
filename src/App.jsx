@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import './components/Button/button.css';
 import Button from './components/Button/Button';
 import Input from './components/Inputs/Input';
 
@@ -48,6 +47,12 @@ class Counter extends React.Component {
     });
   }
 
+  changeMaxNum = ({ target: { value } }) => {
+    this.setState({
+      maximum: Number(value),
+    });
+  }
+
   tick() {
     this.setState({ date: new Date() });
   }
@@ -66,6 +71,8 @@ class Counter extends React.Component {
         <br />
         <br />
         <Input type="number" inputName="Step" defaultValue={this.state.step} onChange={this.changeStep} />
+        <br />
+        <Input type="number" inputName="Max" defaultValue={this.state.maximum} onChange={this.changeMaxNum} />
         <h2>Now { this.state.date.toLocaleTimeString() }</h2>
       </div>
     );
