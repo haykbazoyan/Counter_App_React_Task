@@ -14,3 +14,5 @@
     * Step
 
 3. Save all info in local storage
+
+## P.S. 3rd item (local storage) I will add a little bit later
