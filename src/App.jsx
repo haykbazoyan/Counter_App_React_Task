@@ -37,7 +37,7 @@ class Counter extends React.Component {
 
   clickRes = () => {
     this.setState({
-      count: 0,
+      count: this.state.minimum,
     });
   }
 
@@ -50,6 +50,12 @@ class Counter extends React.Component {
   changeMaxNum = ({ target: { value } }) => {
     this.setState({
       maximum: Number(value),
+    });
+  }
+
+  changeMinNum = ({ target: { value } }) => {
+    this.setState({
+      minimum: Number(value),
     });
   }
 
@@ -73,6 +79,8 @@ class Counter extends React.Component {
         <Input type="number" inputName="Step" defaultValue={this.state.step} onChange={this.changeStep} />
         <br />
         <Input type="number" inputName="Max" defaultValue={this.state.maximum} onChange={this.changeMaxNum} />
+        <br />
+        <Input type="number" inputName="Min" defaultValue={this.state.minimum} onChange={this.changeMinNum} />
         <h2>Now { this.state.date.toLocaleTimeString() }</h2>
       </div>
     );
