@@ -23,19 +23,19 @@ class Counter extends React.Component {
     clearInterval(this.timerId);
   }
 
-  clickInc = () => {
+  handleInc = () => {
     this.setState((prevCount) => ({
       count: prevCount.count + this.state.step,
     }));
   }
 
-  clickDec = () => {
+  handleDec = () => {
     this.setState((prevCount) => ({
       count: prevCount.count - this.state.step,
     }));
   }
 
-  clickRes = () => {
+  handleRes = () => {
     this.setState({
       count: this.state.minimum,
     });
@@ -71,9 +71,9 @@ class Counter extends React.Component {
     return (
       <div className="App">
         <p>Counter: {this.state.count}</p>
-        <Button onClickFn={this.clickInc} isDisable={isIncDisable} btnName="Increase" />
-        <Button onClickFn={this.clickDec} isDisable={isDecDisable} btnName="Decrease" />
-        <Button onClickFn={this.clickRes} isDisable={!count} btnName="Reset" />
+        <Button onClickFn={this.handleInc} isDisable={isIncDisable} btnName="Increase" />
+        <Button onClickFn={this.handleDec} isDisable={isDecDisable} btnName="Decrease" />
+        <Button onClickFn={this.handleRes} isDisable={!count} btnName="Reset" />
         <br />
         <br />
         <Input type="number" inputName="Step" defaultValue={this.state.step} onChange={this.changeStep} />
